@@ -1,3 +1,4 @@
+import 'package:app_text/main.dart';
 import 'package:app_text/screens/exercise1.dart';
 import 'package:app_text/screens/exercise2.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,7 @@ class MyDrawer extends StatelessWidget {
         children: [
           ListTile(
             title: Text("Menu Principal"),
-            onTap: ()=>Navigator.pop(context),
+            onTap: ()=>Navigator.push(context,MaterialPageRoute(builder: (context)=> Screen1())),
           ),
           ListTile(
             title: Text("Ejercicio 1"),

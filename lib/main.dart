@@ -31,15 +31,13 @@ class body extends StatelessWidget {
       drawer:  MyDrawer(),
       body: Column(
         children: [
-          Text("Ejercicios"),
-          btn_navegacion(context),
+          Text("Nombre : Cristhofer Gramal"),
+          Text("Usuario Github : Cristhofer21"),
+          
         ],
       ),
     );
   }
 }
 
-Widget btn_navegacion(context){
-return ElevatedButton.icon(onPressed:()=>(), label: Text("Ir al Ejercicio 1"), icon:Icon(Icons.navigate_next_outlined),);
 
-}

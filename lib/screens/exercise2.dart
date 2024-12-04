@@ -43,18 +43,18 @@ Widget velocidad_input(){
     controller: velocidad,
     decoration: InputDecoration(
       border: OutlineInputBorder(),
-      labelText: 'Altura',
+      labelText: 'Velocidad (m/s)',
     ),
   );
 
 }
 
 
-void InfoMessage(context){
+void InfoMessage(context ,String mensaje){
     showDialog(context: context, builder: (context) {
     return AlertDialog(
       title: Text("Mensaje"),
-      content: Text("La velocidad recorrida es $calculo"),
+      content: Text(mensaje),
     );
   } );
 
@@ -63,7 +63,10 @@ void InfoMessage(context){
 
 
 Widget btn_calculo(context){
- return FilledButton(onPressed: ()=>calculo(context),
+ return FilledButton(onPressed: (){
+  double distacia=calculo(context);
+  InfoMessage(context,"La distancia recorrida es de $distacia metros"); 
+ },
    child: Text("Calcular", style: TextStyle(fontSize: 30),),
    style: ButtonStyle( backgroundColor: WidgetStatePropertyAll(const Color.fromARGB(255, 20, 173, 25)) ),
    );}
@@ -75,9 +78,7 @@ int time=25;
 // ignore: unused_local_variable
 double distacia = _velocidad * time;
 
-InfoMessage(context);
-
-return calculo(context);
+return distacia;
 
 }
 
